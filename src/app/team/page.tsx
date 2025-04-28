@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import React from 'react';
 
 export default function Team() {
@@ -26,7 +27,7 @@ export default function Team() {
 
         {/* Image with name inside */}
         <div className="relative w-full h-96 overflow-hidden shadow-lg">
-          <img
+          <Image
             src={image}
             alt={name}
             className="w-full h-full object-cover"

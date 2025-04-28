@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { ChevronDown, ChevronRight } from 'lucide-react'; // optional: small arrow icons, can use emoji too
+import { ChevronDown } from 'lucide-react'; // optional: small arrow icons, can use emoji too
 
 export default function Services() {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
