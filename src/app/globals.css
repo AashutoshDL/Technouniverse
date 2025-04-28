@@ -1,0 +1,32 @@
+@import url("https://fonts.googleapis.com/css2?family=Cal+Sans&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #000000;
+  --font-size-main: 12rem;
+  --font-size-submain: 10rem;
+  --about-us: #2b3537;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --size-main: var(--font-size-main);
+  --size-submain: var(--font-size-submain);
+  --color-about-us: var(--about-us);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: "DM Sans", sans-serif;
+}
+
+.text-main {
+  font-size: var(--font-size-main);
+}
+
+.aboutus{
+  background: var(--about-us);
+}
