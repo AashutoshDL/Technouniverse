@@ -1,7 +1,8 @@
 'use client';
 
 import React, { useState } from 'react';
-import { ChevronDown } from 'lucide-react'; // optional: small arrow icons, can use emoji too
+import { motion } from 'framer-motion';
+import { ChevronDown } from 'lucide-react'; // optional: small arrow icons
 
 export default function Services() {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
@@ -9,21 +10,21 @@ export default function Services() {
   const services = [
     {
       title: "Web Development",
-      description: "We build fast, modern, and scalable websites and applications tailored to your needs."
+      description: "We specialize in creating fast, modern, and scalable websites and web applications. Our team works closely with you to understand your business requirements, crafting custom solutions that deliver seamless user experiences. Whether it's a simple website or a complex web application, we ensure that it is responsive, secure, and optimized for performance, all while keeping your unique needs at the forefront."
     },
     {
       title: "AR & 3D Solutions",
-      description: "Create immersive augmented reality experiences and powerful 3D visualizations."
+      description: "We design and develop immersive augmented reality (AR) experiences and advanced 3D visualizations that bring your ideas to life. From interactive product demos to cutting-edge architectural visualizations, our AR and 3D solutions enable users to engage with products or concepts in a more dynamic and hands-on way. These technologies offer enhanced customer experiences, helping businesses to stand out in a crowded market."
     },
     {
       title: "Hardware Services",
-      description: "We sell, upgrade, and professionally repair computer parts and printers."
+      description: "Our hardware services cover everything from the sale of top-quality computer parts to professional upgrades and repairs. We work with businesses and individuals to ensure that their computer systems and hardware are running at optimal performance. Whether it's upgrading your workstation or performing in-depth diagnostics on a malfunctioning printer, we deliver fast, reliable, and affordable solutions with a focus on extending the lifespan of your hardware."
     },
     {
       title: "Automation Systems",
-      description: "Automate business processes to boost efficiency and growth."
+      description: "We help businesses streamline operations and boost efficiency through automation. Our automation systems optimize workflows, eliminate manual processes, and enhance data accuracy. Whether it's automating internal business operations, customer service tasks, or marketing processes, we ensure your systems are integrated and functioning smoothly, ultimately saving you time, reducing errors, and improving productivity across all levels of your organization."
     }
-  ];
+  ];  
 
   const toggleIndex = (index: number) => {
     setActiveIndex(prev => (prev === index ? null : index));
@@ -31,7 +32,16 @@ export default function Services() {
 
   return (
     <div className="flex flex-col items-center min-h-screen aboutus text-white p-8">
-      <h1 className="text-6xl font-light text-center mt-15 mb-16">Our Services</h1>
+      {/* Animated Heading */}
+      <motion.h1
+        initial={{ x: -500, opacity: 0 }}
+        whileInView={{ x: 0, opacity: 1 }}
+        transition={{ type: "spring", stiffness: 50, damping: 30 }}
+        viewport={{ once: true }}
+        className="text-6xl font-light text-center mt-15 mb-16"
+      >
+        Our Services
+      </motion.h1>
 
       <div className="w-full max-w-max flex flex-col mt-20 gap-10 ml-10">
         {services.map((service, index) => (

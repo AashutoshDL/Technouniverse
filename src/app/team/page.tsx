@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import React from 'react';
+import { easeInOut, motion } from 'framer-motion';
 
 export default function Team() {
   const teamMembers = [
@@ -30,7 +31,8 @@ export default function Team() {
           <Image
             src={image}
             alt={name}
-            className="w-full h-full object-cover"
+            fill
+            className="object-cover"
           />
         </div>
             <h3 className="text-xl font-semibold text-black">{name}</h3>
@@ -42,7 +44,16 @@ export default function Team() {
 
   return (
     <section className="min-h-screen relative overflow-hidden">
-    <h2 className="text-6xl text-center pt-25 font-bold mb-35 text-gray-800">MEET OUR TEAM</h2>
+    <motion.h1
+        initial={{ x: 100, opacity: 0 }}
+        whileInView={{ x: 0, opacity: 1 }}
+        transition={{ type: "tween", ease: easeInOut, duration:0.2 }}
+        viewport={{ once: true }}
+        className="text-6xl text-center pt-25 font-bold mb-35 text-gray-800"
+      >
+        MEET OUR TEAM
+      </motion.h1>
+
       <div className="flex flex-wrap justify-center gap-40">
         {teamMembers.map((member, index) => (
           <Card

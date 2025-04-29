@@ -12,6 +12,14 @@ export const metadata: Metadata = {
     url: "https://technouniversenp.com",
     siteName: "Technouniverse",
     type: "website",
+    images: [
+      {
+        url: "/1.png", // Path to your logo image
+        width: 800,
+        height: 800,
+        alt: "Technouniverse Logo"
+      }
+    ]
   },
 };
 
@@ -22,8 +30,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+      <link rel="icon" href="/2.png" />
+      </head>
       <body
         className={`antialiased`}
+        cz-shortcut-listen="true"
       >
         {children}
       </body>
